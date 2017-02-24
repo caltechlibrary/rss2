@@ -29,25 +29,48 @@ import (
 type RSS2 struct {
 	XMLName xml.Name `xml:"rss" json:"-"`
 	Version string   `xml:"version,attr" json:"version"`
+
 	// Required
 	Title       string `xml:"channel>title" json:"title"`
 	Link        string `xml:"channel>link" json:"link"`
 	Description string `xml:"channel>description" json:"description"`
+
 	// Optional
-	PubDate  string `xml:"channel>pubDate" json:"pubDate,omitempty"`
-	ItemList []Item `xml:"channel>item" json:"item,omitempty"`
+	Language       string `xml:"channel>language,omitempty" json:"language,omitempty"`
+	Copyright      string `xml:"channel>copyright,omitempty" json:"copyright,omitempty"`
+	ManagingEditor string `xml:"channel>managingEditor,omitempty" json:"managingEditor,omitempty"`
+	WebMaster      string `xml:"channel>webMaster,omitempty" json:"webMaster,omitempty"`
+	PubDate        string `xml:"channel>pubDate,omitempty" json:"pubDate,omitempty"`
+	LastBuildDate  string `xml:"channel>lastBuildDate,omitempty" json:"lastBuildDate,omitempty"`
+	Category       string `xml:"channel>category,omitempty" json:"category,omitempty"`
+	Generator      string `xml:"channel>generator,omitempty" json:"generator,omitempty"`
+	Docs           string `xml:"channel>docs,omitempty" json:"docs,omitempty"`
+	Cloud          string `xml:"channel>cloud,omitempty" json:"cloud,omitempty"`
+	TTL            string `xml:"channel>ttl,omitempty" json:"ttl,omitempty"`
+	Image          string `xml:"channel>image,omitempty" json:"image,omitempty"`
+	Rating         string `xml:"channel>rating,omitempty" json:"rating,omitempty"`
+	SkipHours      string `xml:"channel>skipHours,omitempty" json:"skipHours,omitempty"`
+	SkipDays       string `xml:"channel>skipDays,omitempty" json:"skipDays,omitempty"`
+	ItemList       []Item `xml:"channel>item,omitempty" json:"item,omitempty"`
 }
 
 type Item struct {
 	// Optional according to Dave Winer
 	Title string `xml:"title" json:"title,omitempty"`
+
 	// Required
 	Link string `xml:"link" json:"link"`
+
 	// Optional
-	Description template.HTML `xml:"description" json:"description,omitempty"`
-	Content     template.HTML `xml:"encoded" json:"encoded,omitempty"`
-	PubDate     string        `xml:"pubDate" json:"pubDate,omitempty"`
-	Comments    string        `xml:"comments" json:"comments,omitempty"`
+	Description template.HTML `xml:"description,omitempty" json:"description,omitempty"`
+	Author      string        `xml:"author,omitempty" json:"omitempty"`
+	Category    string        `xml:"category,omitempty" json:"category,omitempty"`
+	Content     template.HTML `xml:"encoded,omitempty" json:"encoded,omitempty"`
+	PubDate     string        `xml:"pubDate,omitempty" json:"pubDate,omitempty"`
+	Comments    string        `xml:"comments,omitempty" json:"comments,omitempty"`
+	Enclosure   string        `xml:"enclosure,omitempty" json:"enclosure,omitempty"`
+	GUID        string        `xml:"guid,omitempty" json:"guid,omitempty"`
+	Source      string        `xml:"source,omitempty" json:"source,omitempty"`
 }
 
 // Parse return an RSS2 document as a RSS2 structure.

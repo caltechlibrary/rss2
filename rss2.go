@@ -26,6 +26,8 @@ import (
 	"strings"
 )
 
+const Version = `v0.0.1`
+
 type RSS2 struct {
 	XMLName xml.Name `xml:"rss" json:"-"`
 	Version string   `xml:"version,attr" json:"version"`

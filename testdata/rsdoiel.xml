@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>R. S. Doiel</title>
+        <link>http://rsdoiel.github.io/blog</link>
+        <description>Robert&#39;s ramblings and wonderigs</description>
+        <pubDate>Fri, 05 Jan 2018 22:34:15 PST</pubDate>
+        <lastBuildDate>Fri, 05 Jan 2018 22:34:15 PST</lastBuildDate>
+        <generator>mkrss v0.0.20-pre</generator>
+        <item>
+            <title>OPML to Markdown and back</title>
+            <link>http://rsdoiel.github.io/blog/2016/05/28/OPML-to-Markdown-and-back.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Sat, 28 May 2016 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>Instant Articles, Accelerated Mobile Pages, Twitter Cards and Open Graph</title>
+            <link>http://rsdoiel.github.io/blog/2016/05/30/amp-cards-and-open-graph.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Mon, 30 May 2016 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>How to make a Pi-Top more Raspbian</title>
+            <link>http://rsdoiel.github.io/blog/2016/07/04/How-To-Make-A-PiTop-More-Raspbian.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Mon, 04 Jul 2016 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>Exploring Bash for Windows 10 Pro</title>
+            <link>http://rsdoiel.github.io/blog/2016/08/15/Setting-up-Go-under-Bash-for-Windows-10.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>From Markdown and Bash to mkpage</title>
+            <link>http://rsdoiel.github.io/blog/2016/08/16/From-Markdown-and-Bash-to-mkpage.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Tue, 16 Aug 2016 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>Android, Termux and Dev Environment</title>
+            <link>http://rsdoiel.github.io/blog/2016/09/20/Android-Termux-Dev-environment.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Tue, 20 Sep 2016 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>Cross compiling Go 1.8.3 for Pine64 Pinebook</title>
+            <link>http://rsdoiel.github.io/blog/2017/06/16/cross-compiling-go.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Fri, 16 Jun 2017 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>NodeJS, NPM, Electron</title>
+            <link>http://rsdoiel.github.io/blog/2017/10/20/node-npm-electron.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Fri, 20 Oct 2017 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>Harvesting my Gists from Github</title>
+            <link>http://rsdoiel.github.io/blog/2017/12/10/harvesting-my-gists-from-github.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Sun, 10 Dec 2017 00:00:00 UTC</pubDate>
+        </item>
+        <item>
+            <title>Raspbian Stretch on DELL E4310 Laptop</title>
+            <link>http://rsdoiel.github.io/blog/2017/12/18/raspbian-stretch-on-amd64.html</link>
+            <author>R. S. Doiel</author>
+            <pubDate>Mon, 18 Dec 2017 00:00:00 UTC</pubDate>
+        </item>
+    </channel>
+</rss>

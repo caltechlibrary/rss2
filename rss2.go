@@ -19,6 +19,7 @@
 package rss2
 
 import (
+	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"html/template"
@@ -26,7 +27,9 @@ import (
 	"strings"
 )
 
-const Version = `v0.0.1`
+const Version = `v0.0.2`
+
+type CustomAttrs []xml.Attr
 
 type RSS2 struct {
 	XMLName xml.Name `xml:"rss" json:"-"`
@@ -65,7 +68,7 @@ type Item struct {
 
 	// Optional
 	Description template.HTML `xml:"description,omitempty" json:"description,omitempty"`
-	Author      string        `xml:"author,omitempty" json:"omitempty"`
+	Author      string        `xml:"author,omitempty" json:"author,omitempty"`
 	Category    string        `xml:"category,omitempty" json:"category,omitempty"`
 	Content     template.HTML `xml:"encoded,omitempty" json:"encoded,omitempty"`
 	PubDate     string        `xml:"pubDate,omitempty" json:"pubDate,omitempty"`
@@ -73,6 +76,21 @@ type Item struct {
 	Enclosure   string        `xml:"enclosure,omitempty" json:"enclosure,omitempty"`
 	GUID        string        `xml:"guid,omitempty" json:"guid,omitempty"`
 	Source      string        `xml:"source,omitempty" json:"source,omitempty"`
+	OtherAttr   CustomAttrs   `xml:",any,attr" json:"other_attrs,omitempty"`
+}
+
+// MarshalJSON() marshals the custom attributes that might
+// be included in an RSS feed.
+func (cattr CustomAttrs) MarshalJSON() ([]byte, error) {
+	m := map[string]string{}
+	for _, attr := range cattr {
+		k := attr.Name.Local
+		v := attr.Value
+		if k != "" {
+			m[k] = v
+		}
+	}
+	return json.Marshal(m)
 }
 
 // Parse return an RSS2 document as a RSS2 structure.

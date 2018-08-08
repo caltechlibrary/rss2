@@ -1,0 +1,29 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "description": "A go package and demo for working with RSS v2 XML",
+    "name": "rss2",
+    "codeRepository": "https://github.com/caltechlibrary/rss2",
+    "issueTracker": "https://github.com/caltechlibrary/rss2/issues",
+    "license": "https://caltechlibrary/rss2/LICENSE",
+    "version": "0.0.3",
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Robert",
+            "familyName": "Doiel",
+            "affiliation": "Caltech Library",
+            "email": "rsdoiel@library.caltech.edu",
+            "@id": "https://orcid.org/0000-0003-0900-6903"
+        }
+    ],
+    "developmentStatus": "active",
+    "downloadUrl": "https://github.com/caltechlibrary/rss2/releases",
+    "keywords": [
+        "rss2"
+    ],
+    "maintainer": "https://orcid.org/0000-0003-0900-6903",
+    "programmingLanguage": [
+        "Go"
+    ]
+}

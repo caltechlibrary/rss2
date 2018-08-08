@@ -31,14 +31,19 @@ import (
 )
 
 var (
+	synopsis = `rss2json convers the RSS 2 XML to JSON`
+
 	description = `
-%s is a program that converts RSS v2's XML to JSON.
+_rss2json_ does one thing. It is a program that 
+converts RSS v2 XML to JSON.
 `
 
 	examples = `
 Convert *rss.xml* to *rss.json*.
 
-    %s rss.xml rss.json
+` + "```" + `
+    rss2json rss.xml rss.json
+` + "```" + `
 `
 
 	license = `
@@ -68,6 +73,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 	quiet            bool
 	newLine          bool
 	generateMarkdown bool
+	generateManPage  bool
 
 	// Application options
 	prettyPrint bool
@@ -81,8 +87,9 @@ func main() {
 	app.AddParams("INPUT_RSS_XML_FILENAME", "[OUTPUT_JSON_FILENAME]")
 
 	// Add Help Docs
-	app.AddHelp("description", []byte(fmt.Sprintf(description, appName)))
-	app.AddHelp("examples", []byte(fmt.Sprintf(examples, appName)))
+	app.AddHelp("synopsis", []byte(synopsis))
+	app.AddHelp("description", []byte(description))
+	app.AddHelp("examples", []byte(examples))
 	app.AddHelp("license", []byte(fmt.Sprintf(license, appName, rss2.Version)))
 
 	// Standard Options
@@ -95,6 +102,7 @@ func main() {
 	app.StringVar(&inputFName, "i,input", "", "set input filename")
 	app.StringVar(&outputFName, "o,output", "", "set output filename")
 	app.BoolVar(&generateMarkdown, "generate-markdown", false, "generate Markdown documentation")
+	app.BoolVar(&generateManPage, "generate-manpage", false, "generate man page")
 
 	// Application Options
 	app.BoolVar(&prettyPrint, "p,pretty", false, "pretty print XML output")
@@ -125,6 +133,10 @@ func main() {
 	// Handle options
 	if generateMarkdown {
 		app.GenerateMarkdown(os.Stdout)
+		os.Exit(0)
+	}
+	if generateManPage {
+		app.GenerateManPage(os.Stdout)
 		os.Exit(0)
 	}
 	if showHelp || showExamples {

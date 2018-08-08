@@ -38,6 +38,11 @@ test:
 clean:
 	if [ -d bin ]; then rm -fR bin; fi
 	if [ -d dist ]; then rm -fR dist; fi
+	if [ -d man ]; then rm -fR man; fi
+
+man: build
+	mkdir -p man/man1
+	bin/rss2json -generate-manpage | nroff -Tutf8 -man > man/man1/rss2json.1
 
 dist/linux-amd64:
 	mkdir -p dist/bin

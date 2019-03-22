@@ -84,7 +84,7 @@ func main() {
 	appName := app.AppName()
 
 	// Document non-option parameters
-	app.AddParams("INPUT_RSS_XML_FILENAME", "[OUTPUT_JSON_FILENAME]")
+	app.SetParams("INPUT_RSS_XML_FILENAME", "[OUTPUT_JSON_FILENAME]")
 
 	// Add Help Docs
 	app.AddHelp("synopsis", []byte(synopsis))

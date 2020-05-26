@@ -6,7 +6,7 @@
     "codeRepository": "https://github.com/caltechlibrary/rss2",
     "issueTracker": "https://github.com/caltechlibrary/rss2/issues",
     "license": "https://caltechlibrary/rss2/LICENSE",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "author": [
         {
             "@type": "Person",

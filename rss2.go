@@ -26,7 +26,7 @@ import (
 	"strings"
 )
 
-const Version = `v0.0.4`
+const Version = `v0.0.5`
 
 type CustomAttrs []xml.Attr
 
@@ -59,6 +59,7 @@ type RSS2 struct {
 }
 
 type Item struct {
+	XMLName xml.Name `xml:"item,omitempty" json:"-"`
 	// Optional according to Dave Winer
 	Title string `xml:"title" json:"title,omitempty"`
 
@@ -66,7 +67,7 @@ type Item struct {
 	Link string `xml:"link" json:"link"`
 
 	// Optional
-	Description string      `xml:"description,omitempty" json:"description,omitempty"`
+	Description string      `xml:"description,omitempty,cdata" json:"description,omitempty"`
 	Author      string      `xml:"author,omitempty" json:"author,omitempty"`
 	Category    string      `xml:"category,omitempty" json:"category,omitempty"`
 	Content     string      `xml:"encoded,omitempty" json:"encoded,omitempty"`

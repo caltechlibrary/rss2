@@ -27,7 +27,7 @@ import (
 	"strings"
 )
 
-const Version = `v0.0.3`
+const Version = `v0.0.4`
 
 type CustomAttrs []xml.Attr
 
@@ -67,16 +67,16 @@ type Item struct {
 	Link string `xml:"link" json:"link"`
 
 	// Optional
-	Description template.HTML `xml:"description,omitempty" json:"description,omitempty"`
-	Author      string        `xml:"author,omitempty" json:"author,omitempty"`
-	Category    string        `xml:"category,omitempty" json:"category,omitempty"`
-	Content     template.HTML `xml:"encoded,omitempty" json:"encoded,omitempty"`
-	PubDate     string        `xml:"pubDate,omitempty" json:"pubDate,omitempty"`
-	Comments    string        `xml:"comments,omitempty" json:"comments,omitempty"`
-	Enclosure   string        `xml:"enclosure,omitempty" json:"enclosure,omitempty"`
-	GUID        string        `xml:"guid,omitempty" json:"guid,omitempty"`
-	Source      string        `xml:"source,omitempty" json:"source,omitempty"`
-	OtherAttr   CustomAttrs   `xml:",any,attr" json:"other_attrs,omitempty"`
+	Description string      `xml:"description,omitempty" json:"description,omitempty"`
+	Author      string      `xml:"author,omitempty" json:"author,omitempty"`
+	Category    string      `xml:"category,omitempty" json:"category,omitempty"`
+	Content     string      `xml:"encoded,omitempty" json:"encoded,omitempty"`
+	PubDate     string      `xml:"pubDate,omitempty" json:"pubDate,omitempty"`
+	Comments    string      `xml:"comments,omitempty" json:"comments,omitempty"`
+	Enclosure   string      `xml:"enclosure,omitempty" json:"enclosure,omitempty"`
+	GUID        string      `xml:"guid,omitempty" json:"guid,omitempty"`
+	Source      string      `xml:"source,omitempty" json:"source,omitempty"`
+	OtherAttr   CustomAttrs `xml:",any,attr" json:"other_attrs,omitempty"`
 }
 
 // MarshalJSON() marshals the custom attributes that might
@@ -195,24 +195,22 @@ func (r *RSS2) items(dataPath string) (map[string]interface{}, error) {
 			}
 		}
 		results["link"] = vals
-		/*
-			case strings.HasSuffix(dataPath, ".description") == true:
-				vals := []string{}
-				for i, item := range r.ItemList {
-					if rexp.inRange(i) == true {
-						vals = append(vals, item.Description)
-					}
-				}
-				results["description"] = vals
-			case strings.HasSuffix(dataPath, ".content") == true:
-				vals := []string{}
-				for i, item := range r.ItemList {
-					if rexp.inRange(i) == true {
-						vals = append(vals, item.Content)
-					}
-				}
-				results["content"] = vals
-		*/
+	case strings.HasSuffix(dataPath, ".description") == true:
+		vals := []string{}
+		for i, item := range r.ItemList {
+			if rexp.inRange(i) == true {
+				vals = append(vals, item.Description)
+			}
+		}
+		results["description"] = vals
+	case strings.HasSuffix(dataPath, ".content") == true:
+		vals := []string{}
+		for i, item := range r.ItemList {
+			if rexp.inRange(i) == true {
+				vals = append(vals, item.Content)
+			}
+		}
+		results["content"] = vals
 	case strings.HasSuffix(dataPath, ".pubDate") == true:
 		vals := []string{}
 		for i, item := range r.ItemList {

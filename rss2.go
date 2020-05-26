@@ -22,7 +22,6 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
-	"html/template"
 	"strconv"
 	"strings"
 )

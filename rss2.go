@@ -89,6 +89,10 @@ func (cdata *CDataString) Set(src string) {
 	cdata.value = src
 }
 
+func (cdata *CDataString) String() string {
+	return cdata.value
+}
+
 // MarshalJSON() marshals the custom attributes that might
 // be included in an RSS feed.
 func (cattr CustomAttrs) MarshalJSON() ([]byte, error) {

@@ -67,16 +67,26 @@ type Item struct {
 	Link string `xml:"link" json:"link"`
 
 	// Optional
-	Description string      `xml:"description,omitempty,cdata" json:"description,omitempty"`
-	Author      string      `xml:"author,omitempty" json:"author,omitempty"`
-	Category    string      `xml:"category,omitempty" json:"category,omitempty"`
-	Content     string      `xml:"encoded,omitempty" json:"encoded,omitempty"`
-	PubDate     string      `xml:"pubDate,omitempty" json:"pubDate,omitempty"`
-	Comments    string      `xml:"comments,omitempty" json:"comments,omitempty"`
-	Enclosure   string      `xml:"enclosure,omitempty" json:"enclosure,omitempty"`
-	GUID        string      `xml:"guid,omitempty" json:"guid,omitempty"`
-	Source      string      `xml:"source,omitempty" json:"source,omitempty"`
-	OtherAttr   CustomAttrs `xml:",any,attr" json:"other_attrs,omitempty"`
+	//Description string      `xml:"description,omitempty,cdata" json:"description,omitempty"`
+	//FIXME: ,cdata annotations fails in Go v1.14.3.
+	Description *CDataString `xml:"description,omitempty" json:"description,omitempty"`
+	Author      string       `xml:"author,omitempty" json:"author,omitempty"`
+	Category    string       `xml:"category,omitempty" json:"category,omitempty"`
+	Content     string       `xml:"encoded,omitempty" json:"encoded,omitempty"`
+	PubDate     string       `xml:"pubDate,omitempty" json:"pubDate,omitempty"`
+	Comments    string       `xml:"comments,omitempty" json:"comments,omitempty"`
+	Enclosure   string       `xml:"enclosure,omitempty" json:"enclosure,omitempty"`
+	GUID        string       `xml:"guid,omitempty" json:"guid,omitempty"`
+	Source      string       `xml:"source,omitempty" json:"source,omitempty"`
+	OtherAttr   CustomAttrs  `xml:",any,attr" json:"other_attrs,omitempty"`
+}
+
+type CDataString struct {
+	value string `xml:",cdata,omitempty" json:,omitempty"`
+}
+
+func (cdata *CDataString) Set(src string) {
+	cdata.value = src
 }
 
 // MarshalJSON() marshals the custom attributes that might
@@ -199,7 +209,7 @@ func (r *RSS2) items(dataPath string) (map[string]interface{}, error) {
 		vals := []string{}
 		for i, item := range r.ItemList {
 			if rexp.inRange(i) == true {
-				vals = append(vals, item.Description)
+				vals = append(vals, item.Description.value)
 			}
 		}
 		results["description"] = vals

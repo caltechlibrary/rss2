@@ -75,7 +75,7 @@ func TestRSS2(t *testing.T) {
   <title> Direct Emission of I_2 Molecule and IO Radical from the Heterogeneous Reactions of Gaseous Ozone with Aqueous Potassium Iodide Solution </title>
   <link>http://authors.library.caltech.edu/15526/</link>
   <guid>http://authors.library.caltech.edu/15526/</guid>
-  <description>  Sakamoto, Yosuke and Yabushita, Akihiro and Kawasaki, Masahiro and Enami, Shinichi  (2009)  Direct Emission of I_2 Molecule and IO Radical from the Heterogeneous Reactions of Gaseous Ozone with Aqueous Potassium Iodide Solution.  Journal of Physical Chemistry A, 113  (27).   pp. 7707-7713.  ISSN 1089-5639.       http://resolver.caltech.edu/CaltechAUTHORS:20090901-131930555 &lt;http://resolver.caltech.edu/CaltechAUTHORS:20090901-131930555&gt;  </description><media:content url="http://authors.library.caltech.edu/15526/4/preview.png" type="image/png"/></item>
+  <description>Sakamoto, Yosuke and Yabushita, Akihiro and Kawasaki, Masahiro and Enami, Shinichi  (2009)  Direct Emission of I_2 Molecule and IO Radical from the Heterogeneous Reactions of Gaseous Ozone with Aqueous Potassium Iodide Solution.  Journal of Physical Chemistry A, 113  (27).   pp. 7707-7713.  ISSN 1089-5639.       http://resolver.caltech.edu/CaltechAUTHORS:20090901-131930555 &lt;http://resolver.caltech.edu/CaltechAUTHORS:20090901-131930555&gt;  </description><media:content url="http://authors.library.caltech.edu/15526/4/preview.png" type="image/png"/></item>
 <item>
   <pubDate>Fri, 29 Aug 2008 05:05:45 -0700</pubDate>
   <title> Unimolecular reaction rates in solution and in the isolated molecule: Comparison of diphenyl butadiene nonradiative decay in solutions and supersonic jets </title>
@@ -86,7 +86,7 @@ func TestRSS2(t *testing.T) {
   <title> The osmotic pressure of the ions and of the undissociated molecules of salts in aqueous solution </title>
   <link>http://authors.library.caltech.edu/3382/</link>
   <guid>http://authors.library.caltech.edu/3382/</guid>
-  <description>  Bates, Stuart J.  (1915)  The osmotic pressure of the ions and of the undissociated molecules of salts in aqueous solution.  Proceedings of the National Academy of Sciences of the United States of America, 1  (6).   pp. 363-368.  ISSN 0027-8424.       http://resolver.caltech.edu/CaltechAUTHORS:BATpnas15 &lt;http://resolver.caltech.edu/CaltechAUTHORS:BATpnas15&gt;  </description><media:content url="http://authors.library.caltech.edu/3382/2/preview.png" type="image/png"/></item>
+  <description>  Bates, Stuart J.  (1915)  The osmotic pressure of the ions and of the undissociated molecules of salts in aqueous solution.  Proceedings of the National Academy of Sciences of the United States of America, 1  (6).   pp. 363-368.  ISSN 0027-8424. http://resolver.caltech.edu/CaltechAUTHORS:BATpnas15 &lt;http://resolver.caltech.edu/CaltechAUTHORS:BATpnas15&gt;  </description><media:content url="http://authors.library.caltech.edu/3382/2/preview.png" type="image/png"/></item>
     </channel>
 </rss>`)
 
